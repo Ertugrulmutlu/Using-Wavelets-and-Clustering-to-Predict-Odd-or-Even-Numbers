@@ -1,0 +1,4 @@
+numpy
+pywt
+scikit-learn
+matplotlib
