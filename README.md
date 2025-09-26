@@ -1,47 +1,87 @@
-# Wavelet Parity Detection
+# Wavelet-Based Parity Detection 🧠
 
-This repository implements the code for the paper **"Wavelet-Based Feature Extraction and Clustering for Parity Detection: A Feature Engineering Perspective"**.
+This project explores an unconventional approach to the classic **parity detection problem** — determining whether a number is odd or even — using **wavelet-based feature extraction** and **unsupervised clustering**.
 
-The goal is to solve a trivial mathematical problem — determining whether a number is odd or even — without using modular arithmetic. Instead, we explore a feature engineering approach based on wavelet decomposition and unsupervised clustering.
+Instead of relying on simple modular arithmetic, we transform integers into **binary signals**, apply **Discrete Wavelet Transform (DWT)** to extract **multi-scale features**, and then use **k-means clustering** to test whether these structural patterns reveal parity — even though the problem is purely symbolic.
 
-## 🧠 Overview
+---
 
-* Convert integers into binary signals.
-* Apply multi-level discrete wavelet transform (DWT).
-* Extract statistical features (energy, L2 norm, mean absolute value).
-* Perform per-feature k-means clustering (unsupervised).
-* Aggregate cluster probabilities to compute an "oddness score."
-* Classify numbers as odd/even.
+## 🚀 Features
+- Converts integers into binary signal representations
+- Performs multi-level **wavelet decomposition** (`pywt`)
+- Extracts signal-based statistical features: **Energy**, **L2 Norm**, and **Mean Absolute Value**
+- Applies **unsupervised k-means clustering** for parity classification
+- Calculates and prints classification accuracy
 
-📊 **Result:** ~69.67% accuracy without using any arithmetic rule.
+---
 
-## ⚙️ Usage
+## 📦 Installation
+
+Clone the repository and install the dependencies:
+
+```bash
+git clone https://github.com/Ertugrulmutlu/Using-Wavelets-and-Clustering-to-Predict-Odd-or-Even-Numbers.git
+cd Using-Wavelets-and-Clustering-to-Predict-Odd-or-Even-Numbers
+pip install -r requirements.txt
+```
+
+---
+
+## ▶️ Run the Script
+
+Simply run the main script:
+
+```bash
+python main.py
+```
+
+This will:
+- Compute wavelet-based features for integers
+- Cluster them without any labels
+- Estimate the parity classification accuracy (~69.67%)
+- Print the final results to the console
+
+---
+
+## 📚 Citation
+
+If you use this code in your research, please cite:
+
+```
+Mutlu, Ertuğrul. "Wavelet-Based Feature Extraction and Clustering for Parity Detection: A Feature Engineering Perspective." 2025.
+```
+
+---
+
+## 🧪 Requirements
+
+- Python 3.8+
+- numpy
+- pywt
+- scikit-learn
+- matplotlib
+
+Install them manually or use:
 
 ```bash
 pip install -r requirements.txt
-python main.py --start 1 --end 1000 --wavelet haar --max_level 3
 ```
 
-Outputs:
-
-* 📈 `figures/cluster_scores.png` – visualization of oddness scores
-* 📁 `results/metrics.json` – accuracy and experiment metadata
-* 📁 `results/scores.npz` – all scores and predictions
+---
 
 ## 📁 Project Structure
 
 ```
-├─ main.py                # main script
-├─ requirements.txt      # dependencies
-├─ figures/              # generated plots
-├─ results/              # saved results
-└─ README.md            # this file
+├── main.py              # Core implementation
+├── requirements.txt     # Dependencies
+├── README.md            # Project documentation
+└── run.sh               # Quick run script (optional)
 ```
 
-## 📄 Citation
+---
 
-If you use this code, please cite the corresponding student paper:
+## 🧠 Author
 
-```
-E. Mutlu, "Wavelet-Based Feature Extraction and Clustering for Parity Detection: A Feature Engineering Perspective," RWTH Aachen University, 2025.
-```
+**Ertuğrul Mutlu**  
+RWTH Aachen University - Department of Computer Engineering  
+📧 Contact: ertugrulmutlu004@gmail.com
